@@ -27,6 +27,29 @@ assert.deepEqual(sanitizeObject({
   }
 }, 'Did not properly deeply nested objects');
 
+var unmutatedSource = {
+  ssn: '666-55-2322',
+  deeply: {
+    okay: 'value',
+    nested: {
+      normal: 'value',
+      ssn: '666-55-2322'
+    }
+  }
+};
+
+sanitizeObject(unmutatedSource, ['ssn']);
+assert.deepEqual(unmutatedSource, {
+  ssn: '666-55-2322',
+  deeply: {
+    okay: 'value',
+    nested: {
+      normal: 'value',
+      ssn: '666-55-2322'
+    }
+  }
+}, 'Mutated source object');
+
 assert.deepEqual(sanitizeObject({
   ssn: '666-55-2322',
   deeply: {
