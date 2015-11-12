@@ -1,0 +1,19 @@
+{
+  "name": "sanitize-object",
+  "version": "1.0.0",
+  "description": "Sanitize the values of sensitive object properties",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "tonicExampleFilename": "example.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^2.3.3"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}
