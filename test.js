@@ -25,7 +25,7 @@ assert.deepEqual(sanitizeObject({
       ssn: '[FILTERED]'
     }
   }
-}, 'did not properly deeply nested objects');
+}, 'Did not properly deeply nested objects');
 
 assert.deepEqual(sanitizeObject({
   ssn: '666-55-2322',
@@ -45,7 +45,7 @@ assert.deepEqual(sanitizeObject({
       ssn: '[FILTERED]'
     }
   }
-}, 'properly handles multiple blacklist items');
+}, 'Properly handles multiple blacklist items');
 
 assert.deepEqual(sanitizeObject({
   ssn: '666-55-2322',
@@ -55,4 +55,4 @@ assert.deepEqual(sanitizeObject({
   ssn: '[FILTERED]',
   uhOh: null,
   arrayOfNull: [null, 1]
-}, 'replaces the values of sensitive keys');
+}, 'Replaces the values of sensitive keys');

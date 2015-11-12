@@ -8,11 +8,8 @@
   },
   "tonicExampleFilename": "example.js",
   "dependencies": {},
-  "devDependencies": {
-    "mocha": "^2.3.3"
-  },
   "scripts": {
-    "test": "mocha"
+    "test": "node test.js"
   },
   "author": "",
   "license": "ISC"
