@@ -1,4 +1,4 @@
-var sanitizeObject = require('sanitize-object')
+var sanitizeObject = require('sanitize-values')
 var assert = require('assert')
 
 var blacklist = ['secretNumber', 'ssn']
@@ -18,8 +18,8 @@ assert.deepEqual(sanitized, {
   firstName: 'Bob',
   lastName: 'Bobbins',
   address: {
-    lineOne: '[FILTERED]',
-    secretNumber: '777'
+    lineOne: '123 Imaginary Way',
+    secretNumber: '[FILTERED]'
   },
   ssn: '[FILTERED]'
 })
