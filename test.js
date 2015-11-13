@@ -51,6 +51,20 @@ assert.deepEqual(sanitizeObject({
   }
 }, 'Did not properly handle arrays')
 
+var withArray = sanitizeObject({
+  arrayed: [
+    {
+      normal: 'normal',
+      ssn: '666-22-2432'
+    }
+  ]
+}, ['ssn'])
+
+assert(
+  Object.prototype.toString.call(withArray.arrayed) === '[object Array]',
+  'Converted an array into an index object'
+)
+
 var unmutatedSource = {
   ssn: '666-55-2322',
   deeply: {
