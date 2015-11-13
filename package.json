@@ -1,6 +1,5 @@
 {
   "name": "sanitize-values",
-  "version": "1.0.0",
   "description": "Sanitize the values of sensitive properties in an object",
   "main": "index.js",
   "directories": {
@@ -9,11 +8,17 @@
   "tonicExampleFilename": "example.js",
   "dependencies": {},
   "scripts": {
-    "test": "standard && node test.js"
+    "test": "standard && node test.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "author": "Nick Tomlin",
   "license": "ISC",
   "devDependencies": {
-    "standard": "^5.3.1"
+    "standard": "^5.3.1",
+    "semantic-release": "^4.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NickTomlin/sanitize-values.git"
   }
 }
