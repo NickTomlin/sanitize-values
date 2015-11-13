@@ -1,6 +1,10 @@
 sanitize-values
 ===
 
+[![Build Status](http://img.shields.io/travis/NickTomlin/sanitize-values.svg?style=flat&branch=master)](https://travis-ci.org/NickTomlin/sanitize-values)
+![NPM package](https://img.shields.io/npm/v/sanitize-values.svg)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+
 Sanitize sensitive properties of an object.
 
 ``` shell
