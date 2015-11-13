@@ -14,7 +14,7 @@ npm i sanitize-values
 # Usage
 
 ```javascript
-var sanitizeObject = require('sanitize-object')
+var sanitizeObject = require('sanitize-values')
 
 var data = {
   firstName: 'Bob',
