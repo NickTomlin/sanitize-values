@@ -9,8 +9,11 @@
   "tonicExampleFilename": "example.js",
   "dependencies": {},
   "scripts": {
-    "test": "node test.js"
+    "test": "standard && node test.js"
   },
   "author": "Nick Tomlin",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "^5.3.1"
+  }
 }

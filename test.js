@@ -1,11 +1,13 @@
-var assert = require('assert');
-var sanitizeObject = require('./index');
+'use strict'
+
+var assert = require('assert')
+var sanitizeObject = require('./index')
 
 assert.deepEqual(sanitizeObject({
   ssn: '666-55-2322'
 }, ['ssn']), {
   ssn: '[FILTERED]'
-}, 'Did not properly sanitize sensitive key');
+}, 'Did not properly sanitize sensitive key')
 
 assert.deepEqual(sanitizeObject({
   ssn: '666-55-2322',
@@ -16,8 +18,8 @@ assert.deepEqual(sanitizeObject({
       ssn: '666-55-2322'
     }
   }
-}, ['ssn']) , {
-  ssn:  '[FILTERED]',
+}, ['ssn']), {
+  ssn: '[FILTERED]',
   deeply: {
     okay: 'value',
     nested: {
@@ -25,7 +27,7 @@ assert.deepEqual(sanitizeObject({
       ssn: '[FILTERED]'
     }
   }
-}, 'Did not properly deeply nested objects');
+}, 'Did not properly deeply nested objects')
 
 var unmutatedSource = {
   ssn: '666-55-2322',
@@ -36,9 +38,9 @@ var unmutatedSource = {
       ssn: '666-55-2322'
     }
   }
-};
+}
 
-sanitizeObject(unmutatedSource, ['ssn']);
+sanitizeObject(unmutatedSource, ['ssn'])
 assert.deepEqual(unmutatedSource, {
   ssn: '666-55-2322',
   deeply: {
@@ -48,7 +50,7 @@ assert.deepEqual(unmutatedSource, {
       ssn: '666-55-2322'
     }
   }
-}, 'Mutated source object');
+}, 'Mutated source object')
 
 assert.deepEqual(sanitizeObject({
   ssn: '666-55-2322',
@@ -60,7 +62,7 @@ assert.deepEqual(sanitizeObject({
     }
   }
 }, ['ssn', 'danger']), {
-  ssn:  '[FILTERED]',
+  ssn: '[FILTERED]',
   deeply: {
     danger: '[FILTERED]',
     nested: {
@@ -68,7 +70,7 @@ assert.deepEqual(sanitizeObject({
       ssn: '[FILTERED]'
     }
   }
-}, 'Properly handles multiple blacklist items');
+}, 'Properly handles multiple blacklist items')
 
 assert.deepEqual(sanitizeObject({
   ssn: '666-55-2322',
@@ -78,4 +80,4 @@ assert.deepEqual(sanitizeObject({
   ssn: '[FILTERED]',
   uhOh: null,
   arrayOfNull: [null, 1]
-}, 'Replaces the values of sensitive keys');
+}, 'Replaces the values of sensitive keys')
