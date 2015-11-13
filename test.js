@@ -103,3 +103,15 @@ assert.deepEqual(sanitizeObject({
   uhOh: null,
   arrayOfNull: [null, 1]
 }, 'Replaces the values of sensitive keys')
+
+assert.deepEqual(sanitizeObject({
+  uhOh: null,
+  arrayOfNull: [null, 1],
+  privateData: {
+    foo: 'bar'
+  }
+}, ['privateData']), {
+  uhOh: null,
+  arrayOfNull: [null, 1],
+  privateData: '[FILTERED]'
+}, 'Replaces the values of sensitive keys that point to objects')
