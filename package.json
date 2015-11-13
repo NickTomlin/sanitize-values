@@ -1,7 +1,7 @@
 {
-  "name": "sanitize-object",
+  "name": "sanitize-values",
   "version": "1.0.0",
-  "description": "Sanitize the values of sensitive object properties",
+  "description": "Sanitize the values of sensitive properties in an object",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -11,6 +11,6 @@
   "scripts": {
     "test": "node test.js"
   },
-  "author": "",
+  "author": "Nick Tomlin",
   "license": "ISC"
 }
